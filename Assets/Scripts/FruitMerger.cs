@@ -50,7 +50,12 @@ public class FruitMerger : MonoBehaviour
             return;
 
         var go = Instantiate(next.prefab, mid, Quaternion.identity, fruitParent);
-        go.GetComponent<Fruit>()?.Init(next);
+        var fruit = go.GetComponent<Fruit>();
+        if (fruit != null)
+        {
+            fruit.Init(next);
+            fruit.SetDangerGrace(1.5f); // 병합 직후 DangerZone 오탐 방지
+        }
         // ScoreManager.Instance?.AddScore(next.mergeScore); // Phase 4
     }
 }

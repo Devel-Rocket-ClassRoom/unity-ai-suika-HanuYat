@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D), typeof(CircleCollider2D), typeof(SpriteRenderer))]
@@ -8,6 +9,9 @@ public class Fruit : MonoBehaviour
 
     [HideInInspector]
     public bool isMerging;
+
+    // DangerZone이 이 과일을 무시해야 하는 동안 true (스폰 직후 유예 기간)
+    public bool IsIgnoringDanger { get; private set; }
 
     // 스폰 직후 물리 충돌이 즉시 발생하는 오탐 방지 (GDD §10)
     const float collisionIgnoreSeconds = 0.05f;
@@ -26,10 +30,27 @@ public class Fruit : MonoBehaviour
         sr.sprite = data.sprite;
         sr.color = data.color;
 
-        // Knob 스프라이트는 64×64 at PPU 100 → 1 world unit.
-        // localScale = diameter = radius * 2 로 설정하면
-        // CircleCollider2D(radius=0.5) 의 world 반지름 = 0.5 * scale = data.radius 가 됨.
-        transform.localScale = Vector3.one * (data.radius * 2f);
+        // 스프라이트 실제 크기(world unit)를 기준으로 scale과 collider radius를 계산해
+        // 시각 크기 = 물리 크기가 되도록 맞춤
+        var col = GetComponent<CircleCollider2D>();
+        float spriteSize = (data.sprite != null) ? data.sprite.bounds.size.x : 1f;
+        float scale = (data.radius * 2f) / spriteSize;
+        transform.localScale = Vector3.one * scale;
+        col.radius = spriteSize * 0.5f; // world 반지름 = col.radius * scale = data.radius
+    }
+
+    // 호출 즉시 IsIgnoringDanger = true, seconds 후 false
+    public void SetDangerGrace(float seconds)
+    {
+        StopAllCoroutines();
+        IsIgnoringDanger = true;
+        StartCoroutine(ClearGrace(seconds));
+    }
+
+    IEnumerator ClearGrace(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        IsIgnoringDanger = false;
     }
 
     void OnCollisionEnter2D(Collision2D col)

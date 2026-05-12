@@ -61,7 +61,12 @@ public class FruitSpawner : MonoBehaviour
             Quaternion.identity,
             fruitParent
         );
-        go.GetComponent<Fruit>()?.Init(currentData);
+        var fruit = go.GetComponent<Fruit>();
+        if (fruit != null)
+        {
+            fruit.Init(currentData);
+            fruit.SetDangerGrace(1.0f); // y=4.5에서 낙하 중 DangerZone 오탐 방지
+        }
 
         lastDropTime = Time.time;
         currentData = nextData;
@@ -81,7 +86,10 @@ public class FruitSpawner : MonoBehaviour
             currentData.color.b,
             0.5f
         );
-        previewRenderer.transform.localScale = Vector3.one * (currentData.radius * 2f);
+        // Fruit.Init()과 동일한 sprite bounds 기반 스케일로 미리보기 크기 일치
+        float spriteSize = (currentData.sprite != null) ? currentData.sprite.bounds.size.x : 1f;
+        float scale = (currentData.radius * 2f) / spriteSize;
+        previewRenderer.transform.localScale = Vector3.one * scale;
     }
 
     FruitData PickRandom() => droppableData[Random.Range(0, droppableData.Length)];
