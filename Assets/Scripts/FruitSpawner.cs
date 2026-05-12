@@ -18,7 +18,7 @@ public class FruitSpawner : MonoBehaviour
     float wallInnerX = 3.4f;
 
     [SerializeField]
-    float dropCooldown = 0.5f;
+    float dropCooldown = 0.3f;
 
     FruitData currentData;
     FruitData nextData;

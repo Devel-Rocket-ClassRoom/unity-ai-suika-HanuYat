@@ -129,5 +129,8 @@ $RECYCLE.BIN/
 *.vsix
 *.slnx
 
+# Unity AI Asset Generation scratch (regeneratable)
+/[Gg]enerated[Aa]ssets/
+
 ### Claude Code
 .claude/settings.local.json

@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 7
   fruitName: Pear
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  color: {r: 0.75, g: 0.9, b: 0.2, a: 1}
+  sprite: {fileID: 21300000, guid: 802858e97c3318345890549c55ac3eff, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   radius: 1.1
   mergeScore: 28
   prefab: {fileID: 3515162334700919557, guid: c211aa81c86a0eb4988f4157ae5c8c35, type: 3}
