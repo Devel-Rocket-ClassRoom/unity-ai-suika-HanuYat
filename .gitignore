@@ -98,6 +98,7 @@ playground.xcworkspace
 *.csproj
 *.unityproj
 *.sln
+*.slnx
 *.suo
 
 ### Windows
@@ -126,3 +127,4 @@ $RECYCLE.BIN/
 
 # Built Visual Studio Code Extensions
 *.vsix
+*.slnx
