@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1507c794a7dfd64694887334b5b35c7, type: 3}
+  m_Name: Peach
+  m_EditorClassIdentifier: Assembly-CSharp::FruitData
+  level: 8
+  fruitName: Peach
+  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  color: {r: 1, g: 0.75, b: 0.6, a: 1}
+  radius: 1.25
+  mergeScore: 36
+  prefab: {fileID: 2853663614741437164, guid: f8d9615585375974b8a84a5bf6e4907a, type: 3}
+  nextFruit: {fileID: 11400000, guid: 06029e7e1e88e3347a1ee428b19a2fa0, type: 2}
