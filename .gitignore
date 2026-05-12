@@ -128,3 +128,6 @@ $RECYCLE.BIN/
 # Built Visual Studio Code Extensions
 *.vsix
 *.slnx
+
+### Claude Code
+.claude/settings.local.json
