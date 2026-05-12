@@ -70,6 +70,10 @@ public class Fruit : MonoBehaviour
         if (GetInstanceID() < other.GetInstanceID())
             return;
 
+        // 수박(level 11)은 최종 단계 — 병합하지 않음
+        if (Level >= 11)
+            return;
+
         FruitMerger.Instance?.TryMerge(this, other);
     }
 }

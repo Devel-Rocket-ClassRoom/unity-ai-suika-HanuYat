@@ -7,9 +7,6 @@ public class FruitMerger : MonoBehaviour
     [SerializeField]
     Transform fruitParent;
 
-    [SerializeField]
-    int watermelonBonus = 500;
-
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -32,15 +29,6 @@ public class FruitMerger : MonoBehaviour
 
         Vector3 mid = (a.transform.position + b.transform.position) * 0.5f;
         FruitData data = a.Data;
-
-        // 수박+수박: 둘 다 제거 + 보너스 (GDD §2.2, §4.2)
-        if (data.level >= 11)
-        {
-            // ScoreManager.Instance?.AddScore(watermelonBonus); // Phase 4
-            Destroy(a.gameObject);
-            Destroy(b.gameObject);
-            return;
-        }
 
         Destroy(a.gameObject);
         Destroy(b.gameObject);
