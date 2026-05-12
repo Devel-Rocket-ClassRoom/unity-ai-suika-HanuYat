@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 5
   fruitName: Persimmon
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  color: {r: 0.85, g: 0.4, b: 0, a: 1}
+  sprite: {fileID: 21300000, guid: e636f5469656a2a438a70a6ef253f221, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   radius: 0.75
   mergeScore: 15
   prefab: {fileID: 6951411221196109513, guid: e71b3e6600cb454449ba2ec0afd5544b, type: 3}

@@ -29,14 +29,6 @@ public class Fruit : MonoBehaviour
         var sr = GetComponent<SpriteRenderer>();
         sr.sprite = data.sprite;
         sr.color = data.color;
-
-        // 스프라이트 실제 크기(world unit)를 기준으로 scale과 collider radius를 계산해
-        // 시각 크기 = 물리 크기가 되도록 맞춤
-        var col = GetComponent<CircleCollider2D>();
-        float spriteSize = (data.sprite != null) ? data.sprite.bounds.size.x : 1f;
-        float scale = (data.radius * 2f) / spriteSize;
-        transform.localScale = Vector3.one * scale;
-        col.radius = spriteSize * 0.5f; // world 반지름 = col.radius * scale = data.radius
     }
 
     // 호출 즉시 IsIgnoringDanger = true, seconds 후 false

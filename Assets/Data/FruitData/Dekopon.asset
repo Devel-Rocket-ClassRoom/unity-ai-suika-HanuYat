@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 4
   fruitName: Dekopon
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  color: {r: 1, g: 0.55, b: 0, a: 1}
+  sprite: {fileID: 21300000, guid: 81fd070e105b85b4581295dfa74dd477, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   radius: 0.62
   mergeScore: 10
   prefab: {fileID: 2926447595111736202, guid: bf7ced55b9bc04e4293e3ed5214e66e6, type: 3}

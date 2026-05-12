@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::FruitData
   level: 9
   fruitName: Pineapple
-  sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  color: {r: 1, g: 0.85, b: 0, a: 1}
+  sprite: {fileID: 21300000, guid: b02c07120bfb1d34eae65016108b71a2, type: 3}
+  color: {r: 1, g: 1, b: 1, a: 1}
   radius: 1.45
   mergeScore: 45
   prefab: {fileID: 4359960517559140512, guid: c6c00d9564a5d994c8868ad837436b4f, type: 3}
