@@ -49,6 +49,8 @@
 *.nupkg
 **/[Pp]ackages/*
 !**/[Pp]ackages/build/
+!/Packages/manifest.json
+!/Packages/packages-lock.json
 
 # .NET build artifacts
 artifacts/
